@@ -7,6 +7,22 @@
 
 #ifndef STRLIB_H_
     #define STRLIB_H_
+    #include <stdbool.h>
+
+    // check if the char is a num
+    #define IS_NUM(char) (char > 47 && char < 58) ? (true) : (false)
+
+    // check if the char is a upper letter
+    #define IS_UPPER(char) (char > 64 && char < 91) ? (true) : (false)
+
+    // check if the char is a lower letter
+    #define IS_LOWER(char) (char > 96 && char < 123) ? (true) : (false)
+
+    // check if the char is a letter
+    #define IS_ALPHA(char) (IS_LOWER(char) || IS_UPPER(char)) ? (1) : (0)
+
+    // check if the char is alphanumerique character
+    #define IS_ALPHANUM(char) (IS_NUM(char) || IS_ALPHA(char)) ? (1) : (0)
 
 /// @brief dupliacte a string
 /// @param str the string to be duplicated
@@ -56,5 +72,31 @@ char *my_strndup(char *str, int nbyte);
 /// @note if s1 == NULL, INT_MAX is returned and if s2 == NULL, -INT_MAX
 /// is returned
 int my_strcmp(char *s1, char *s2);
+
+/// @brief indicate if the str content is alpha character
+/// @param str the string to check
+/// @return true if str only contains alpha character
+bool my_str_isalpha(char *str);
+
+
+/// @brief indicate if the str content is alphanum character
+/// @param str the string to check
+/// @return true if str only contains alphanum character
+bool my_str_isalphanum(char *str);
+
+/// @brief indicate if the str content is num character
+/// @param str the string to check
+/// @return true if str only contains num character
+bool my_str_isnum(char *str);
+
+/// @brief indicate if the str content is upper character
+/// @param str the string to check
+/// @return true if str only contains upper character
+bool my_str_isupper(char *str);
+
+/// @brief indicate if the str content is lower character
+/// @param str the string to check
+/// @return true if str only contains lower character
+bool my_str_islower(char *str);
 
 #endif /* !STRLIB_H_ */
