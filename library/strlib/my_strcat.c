@@ -12,7 +12,7 @@ void my_strcat(char *dest, char *s1, char *s2)
 
     if (!dest)
         return;
-    if (s1 != NULL)  {
+    if (s1 != NULL) {
         for (int i = 0; s1[i] != '\0'; i++) {
             dest[index] = s1[i];
             index++;

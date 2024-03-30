@@ -16,8 +16,6 @@ char *my_strdup(char *str)
         return NULL;
     len = my_strlen(str);
     dup_str = my_malloc(sizeof(char *) * (len + 1));
-    for (int i = 0; str[i] != '\0'; i++)
-        dup_str[i] = str[i];
-    dup_str[len] = '\0';
+    my_strcpy(dup_str, str);
     return dup_str;
 }
