@@ -23,4 +23,10 @@ int my_strlen(char *str);
 /// @param src the source to be copied
 void my_strcpy(char *dest, char *src);
 
+/// @brief concatenate two strings together
+/// @param dest the destination to concatenate the two strings
+/// @param s1 the firs strings to be concateneted
+/// @param s2 the second strings to be concatenated
+void my_strcat(char *dest, char *s1, char *s2);
+
 #endif /* !STRLIB_H_ */
