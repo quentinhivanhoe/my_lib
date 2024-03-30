@@ -6,21 +6,8 @@
 */
 #include <stdlib.h>
 #include "../../include/memlib.h"
-#include <stdio.h>
 
-// void *my_realloc(void *ptr, size_t size)
-
-void my_memcpy(void *dest, void *src, int nb)
-{
-    char *cdest = (char *)dest;
-    char *csrc = (char *)src;
-
-    for (int i = 0; i < nb; i++)
-        cdest[i] = csrc[i];
-    cdest[nb] = 0;
-}
-
-void *my_malloc(unsigned int size)
+void *my_malloc(int size)
 {
     void *data = NULL;
 

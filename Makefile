@@ -11,7 +11,9 @@ MAIN	=	main.c
 
 EXEC 	=	lib.out
 
-SRC	=	$(wildcard library/memlib/*.c)
+SRC	=	$(wildcard library/memlib/*.c) 		\
+		$(wildcard library/arraylib/*.c) 	\
+		$(wildcard library/strlib/*.c)		\
 
 LIB_PATH = libmy.a
 
@@ -21,7 +23,7 @@ OBJ	=	$(SRC:.c=.o)
 
 LIB_FLAGS	=	-L . -l my -I include
 
-CFLAGS	=	-W -Wall -Wextra
+CFLAGS	=	-W -Wall -Wextra -Werror
 
 all: $(LIB_PATH)
 	$(CC) -g3 $(MAIN) $(LIB_FLAGS) $(CFLAGS) -o $(EXEC)

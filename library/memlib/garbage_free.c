@@ -21,6 +21,7 @@ bool is_stored(void *data, garbage_t *grb)
     grb = save_ptr;
     return false;
 }
+
 void store_in_grabage(garbage_t **grb, void *data)
 {
     garbage_t *new_grb = malloc(sizeof(garbage_t));
