@@ -5,7 +5,7 @@
 ** malloc and stor the pointer into a garabage free
 */
 #include <stdlib.h>
-#include "../../include/memlib.h"
+#include "memlib.h"
 
 void *my_malloc(int size)
 {

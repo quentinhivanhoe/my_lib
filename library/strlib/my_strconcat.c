@@ -5,8 +5,8 @@
 ** concat two strings and return the new strings
 */
 
-#include "../../include/memlib.h"
-#include "../../include/strlib.h"
+#include "../memlib/memlib.h"
+#include "strlib.h"
 
 char *my_strconcat(char *s1, char *s2)
 {

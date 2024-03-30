@@ -5,7 +5,7 @@
 ** stock all adrress of variable malloc and free them
 */
 #include <stdlib.h>
-#include "../../include/memlib.h"
+#include "memlib.h"
 
 bool is_stored(void *data, garbage_t *grb)
 {

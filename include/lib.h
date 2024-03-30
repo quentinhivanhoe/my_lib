@@ -8,8 +8,9 @@
 #ifndef LIB_H_
     #define LIB_H_
     #include <stdbool.h>
-    #include "arraylib.h"
-    #include "memlib.h"
-    #include "strlib.h"
+    #include <stddef.h>
+    #include "../library/arraylib/arraylib.h"
+    #include "../library/memlib/memlib.h"
+    #include "../library/strlib/strlib.h"
 
 #endif /* !LIB_H_ */

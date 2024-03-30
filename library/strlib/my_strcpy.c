@@ -4,7 +4,7 @@
 ** File description:
 ** copy a string
 */
-#include "../../include/strlib.h"
+#include "strlib.h"
 
 void my_strcpy(char *dest, char *src)
 {

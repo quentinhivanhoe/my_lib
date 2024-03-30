@@ -5,8 +5,7 @@
 ** count the len of an array
 */
 
-#include "../../include/arraylib.h"
-#include <stdio.h>
+#include "arraylib.h"
 
 int my_array_len(void *ptr)
 {

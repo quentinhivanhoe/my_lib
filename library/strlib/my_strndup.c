@@ -4,8 +4,8 @@
 ** File description:
 ** duplicate n byte of a str
 */
-#include "../../include/strlib.h"
-#include "../../include/memlib.h"
+#include "strlib.h"
+#include "../memlib/memlib.h"
 
 char *my_strndup(char *str, int nbyte)
 {
