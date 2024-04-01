@@ -105,4 +105,15 @@ bool my_str_islower(char *str);
 /// @return the string with the char append
 char *my_strappend(char *str, char c);
 
+/// @brief compare two strings until nbyte
+/// @param s1 the first strings to compare
+/// @param s2 the second strings to compare
+/// @param nbyte the number of byte to compare
+/// @return 0 if the two stings is the same,
+///         negative number if s2 > s1
+///         positive number if s1 > s2
+int my_strncmp(char *s1, char *s2, int nbyte);
+
+char *str_replace(char *str, char sup, char rep);
+
 #endif /* !STRLIB_H_ */
