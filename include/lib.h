@@ -9,7 +9,6 @@
     #define LIB_H_
     #include <stdbool.h>
     #include <stddef.h>
-    #include "../library/arraylib/arraylib.h"
     #include "../library/memlib/memlib.h"
     #include "../library/strlib/strlib.h"
 

@@ -4,10 +4,9 @@
 ** File description:
 ** count the len of an array
 */
+#include <stddef.h>
 
-#include "arraylib.h"
-
-int my_array_len(void *ptr)
+int my_memlen(void *ptr)
 {
     char **cptr = NULL;
     int len = 0;

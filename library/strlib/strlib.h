@@ -99,4 +99,10 @@ bool my_str_isupper(char *str);
 /// @return true if str only contains lower character
 bool my_str_islower(char *str);
 
+/// @brief append a new character at the end of string
+/// @param str the sting to append a char
+/// @param c the char to append
+/// @return the string with the char append
+char *my_strappend(char *str, char c);
+
 #endif /* !STRLIB_H_ */

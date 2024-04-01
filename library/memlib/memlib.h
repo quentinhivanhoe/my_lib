@@ -50,13 +50,24 @@ void *my_malloc(int size);
 /// @param src the block of memmory to be copied
 /// @param nb the number of memory block to copy
 /// @note dest must have enough size
-void my_memcpy(void *dest, void *src, int nb);
+void my_memcpy(void *dest, void *src);
 
-// / @brief extend a memory block to a new size precise by size
-// / @param ptr the memeory block to extend
-// / @param size the size to extend the memory
-// / @return the new block of memory allocated
-// / @note the extended size is not initialized
-// void *my_realloc(void *ptr, int old_len, int new_len, size_t size);
+/// @brief duplicate a block of memory
+/// @param mem the block of memory to copy
+/// @return a pointer to the new block of memory
+void *my_memdup(void *mem);
+
+/// @brief extend a memory block to a new size precise by size
+/// @param ptr the memeory block to extend
+/// @param size the size to extend the memory
+/// @return the new block of memory allocated
+/// @note the extended size is not initialized
+void *my_realloc(void *ptr, int size);
+
+
+/// @brief count the len of block of memory
+/// @param ptr the block of memory to count the len
+/// @return the len of the block of memory
+int my_memlen(void *ptr);
 
 #endif /* !GARBAGE_H_ */
