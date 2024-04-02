@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** my_array_len
 ** File description:
-** count the len of an array
+** count the len of a block of memory
 */
 #include <stddef.h>
 
