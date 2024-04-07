@@ -14,6 +14,7 @@ EXEC 	=	lib.out
 SRC	=	$(wildcard library/memlib/*.c) 		\
 		$(wildcard library/arraylib/*.c) 	\
 		$(wildcard library/strlib/*.c)		\
+		$(wildcard library/mathlib/*.c)		\
 
 LIB_PATH = libmy.a
 

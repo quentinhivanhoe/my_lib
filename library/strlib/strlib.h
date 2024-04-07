@@ -114,6 +114,9 @@ char *my_strappend(char *str, char c);
 ///         positive number if s1 > s2
 int my_strncmp(char *s1, char *s2, int nbyte);
 
-char *str_replace(char *str, char sup, char rep);
+/// @brief reversed a string
+/// @param str the string to reversed
+/// @return returns a pointer to the string reversed
+char *my_revstr(char *str);
 
 #endif /* !STRLIB_H_ */
