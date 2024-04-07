@@ -37,8 +37,9 @@ int my_strlen(char *str);
 /// @brief copy a string into a another
 /// @param dest the destination to copy
 /// @param src the source to be copied
+/// @return the number of bytes copied
 /// @note don't forget the null byte in the size of dest
-void my_strcpy(char *dest, char *src);
+int my_strcpy(char *dest, char *src);
 
 /// @brief concatenate two strings together
 /// @param dest the destination to concatenate the two strings
@@ -118,5 +119,25 @@ int my_strncmp(char *s1, char *s2, int nbyte);
 /// @param str the string to reversed
 /// @return returns a pointer to the string reversed
 char *my_revstr(char *str);
+
+/// @brief count the occurences of a character in a string
+/// @param str the string to parse
+/// @param c the charactere to count the occurences
+/// @return the occurences of c
+int my_strocc(char *str, char c);
+
+
+/// @brief copy a string until a character
+/// @param dest the palce to copy the string
+/// @param src the string to be copied
+/// @param c the character to copy until
+/// @return returns the number of byte copied
+int my_strcpytil(char *dest, char *src, char c);
+
+/// @brief duplicate a string until a character
+/// @param str the string to parse
+/// @param c the end character
+/// @return a pointer to the new string allocated
+char *my_strduptil(char *str, char c);
 
 #endif /* !STRLIB_H_ */

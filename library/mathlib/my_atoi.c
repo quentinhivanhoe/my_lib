@@ -5,7 +5,7 @@
 ** transform a string into a number
 */
 
-int my_getnbr(char *str)
+int my_atoi(char *str)
 {
     int nbr = 0;
     int i = 0;
