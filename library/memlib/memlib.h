@@ -82,4 +82,17 @@ int my_memlen(void *ptr);
 /// @param data the data to free
 void my_free(void *data);
 
+/// @brief print the length, size and the address of the allocated block
+/// @param grb the garbage object that store the data
+void print_garbage(garbage_t *grb);
+
+/// @brief free the garbage structure
+/// @param grb the garbage object
+void free_garbage(garbage_t *grb);
+
+/// @brief delete an element of the garabage structure
+/// @param grb the garbage object
+/// @param data the data to delete
+void del_in_garbage(garbage_t **grb, void *data);
+
 #endif /* !GARBAGE_H_ */

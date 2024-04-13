@@ -1,27 +1,11 @@
 /*
 ** EPITECH PROJECT, 2024
-** garbage free
+** handle garbage
 ** File description:
-** stock all adrress of variable malloc and free them
+** handle_garbage
 */
-#include <stdlib.h>
 #include "memlib.h"
 #include <stdio.h>
-
-bool is_stored(void *data, garbage_t *grb)
-{
-    void *save_ptr = grb;
-
-    while (grb != NULL) {
-        if (grb->data == data) {
-            grb = save_ptr;
-            return true;
-        }
-        grb = grb->next;
-    }
-    grb = save_ptr;
-    return false;
-}
 
 void print_garbage(garbage_t *grb)
 {
@@ -32,7 +16,7 @@ void print_garbage(garbage_t *grb)
         len = my_memlen(grb->data);
         printf("Block allocated at: %p\n", grb->data);
         printf("Block lenght: %d\n", len);
-        printf("Block size: %ld\n", sizeof(grb->data));
+        printf("-----------------------------------\n");
         grb = grb->next;
     }
     grb = save_grb;
@@ -77,26 +61,4 @@ void free_garbage(garbage_t *grb)
         grb = grb->next;
         free(saveptr);
     }
-}
-
-int mem_handler(void *data, int act)
-{
-    static garbage_t *grb = NULL;
-
-    if (ACT_ERROR(act) == -1)
-        return -1;
-    if (act == PRINT && data == NULL)
-        print_garbage(grb);
-    if (act == FREE && data != NULL)
-        if (is_stored(data, grb))
-            del_in_garbage(&grb, data);
-    if (act == IS_STORED && data != NULL)
-        if (is_stored(data, grb))
-            return 1;
-    if (act == STORE && data != NULL)
-        if (!is_stored(data, grb))
-            store_in_grabage(&grb, data);
-    if (act == DUMP && data == NULL)
-            free_garbage(grb);
-    return 0;
 }
