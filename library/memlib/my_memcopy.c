@@ -10,7 +10,11 @@ void my_memcpy(void *dest, void *src)
 {
     char **cdest = (char **)dest;
     char **csrc = (char **)src;
+    unsigned int i = 0;
 
-    for (int i = 0; csrc[i] != NULL; i++)
+    while (csrc[i] != NULL) {
         cdest[i] = csrc[i];
+        i++;
+    }
+    cdest[i] = NULL;
 }

@@ -8,13 +8,13 @@
 
 int my_memlen(void *ptr)
 {
-    char **cptr = NULL;
+    char *cptr = NULL;
     int len = 0;
 
     if (!ptr)
         return 0;
-    cptr = (char **)ptr;
-    while (cptr[len] != NULL)
+    cptr = (char *)ptr;
+    while (cptr[len] != 0)
         len++;
     return len;
 }

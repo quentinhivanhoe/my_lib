@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include "memlib.h"
 
-void *my_malloc(int size)
+void *my_malloc(size_t size)
 {
     void *data = NULL;
 
@@ -16,6 +16,6 @@ void *my_malloc(int size)
     data = malloc(size);
     if (data == NULL)
         return data;
-    garbage_handler(data, STORE);
+    mem_handler(data, STORE);
     return data;
 }

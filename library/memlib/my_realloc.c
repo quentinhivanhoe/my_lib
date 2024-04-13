@@ -7,16 +7,13 @@
 #include "memlib.h"
 #include <stdio.h>
 
-void *my_realloc(void *ptr, int size)
+void *my_realloc(void *ptr, size_t size)
 {
     char **new_ptr = NULL;
-    int len = 0;
 
     if (!ptr)
         return my_malloc(size);
-    len = my_memlen(ptr);
-    printf("[%d]\n", len);
-    if (size <= len)
+    if (size <= sizeof(*ptr))
         return ptr;
     new_ptr = my_malloc(size);
     my_memcpy(new_ptr, ptr);

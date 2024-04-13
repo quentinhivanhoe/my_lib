@@ -11,7 +11,7 @@
     #define GARBAGE_H_
 
     // verify if the given actions is valid
-    #define ACT_ERROR(act) ((act < 0) || (act > 1)) ? (-1) : (0)
+    #define ACT_ERROR(act) ((act < 0) || (act > 4)) ? (-1) : (0)
 
     /// free all address stocked
     #define DUMP 0
@@ -19,6 +19,14 @@
     /// store the addr given
     #define STORE 1
 
+    /// check if the addr is stored
+    #define IS_STORED 2
+
+    /// free the addr
+    #define FREE 3
+
+    /// print the addr store in the garbage
+    #define PRINT 4
 
 typedef struct garbage_s {
     void *data;
@@ -31,7 +39,7 @@ typedef struct garbage_s {
 /// @param type the type of the block allocated
 /// @param act action to do, free or store
 /// @return -1 in error case, else 0 in success
-int garbage_handler(void *data, int act);
+int mem_handler(void *data, int act);
 
 /// @brief stock in the garbage object
 /// @param grb the garbage object
@@ -43,7 +51,7 @@ void store_in_grabage(garbage_t **grb, void *data);
 /// @param size the size of the block allocated
 /// @param type the type of the size allocated
 /// @return the address of the block allocated
-void *my_malloc(int size);
+void *my_malloc(size_t size);
 
 /// @brief copy the block of memory pointed by src into dest
 /// @param dest the block of memory where to copy
@@ -62,12 +70,16 @@ void *my_memdup(void *mem);
 /// @param size the size to extend the memory
 /// @return the new block of memory allocated
 /// @note the extended size is not initialized
-void *my_realloc(void *ptr, int size);
+void *my_realloc(void *ptr, size_t size);
 
 
 /// @brief count the len of block of memory
 /// @param ptr the block of memory to count the len
 /// @return the len of the block of memory
 int my_memlen(void *ptr);
+
+/// @brief free the data
+/// @param data the data to free
+void my_free(void *data);
 
 #endif /* !GARBAGE_H_ */
