@@ -27,9 +27,4 @@ int my_atoi(char *str);
 /// @return the number of digit
 int my_nbrlen(int nbr);
 
-/// @brief turn a string into a float
-/// @param str the string to tunr into a float
-/// @return the string turned to float
-float my_atof(char *str);
-
 #endif /* !MATHLIB_H_ */
