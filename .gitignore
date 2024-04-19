@@ -1,4 +1,5 @@
 .vscode/
+coding-style*
 *.o
 *.a
 *.out

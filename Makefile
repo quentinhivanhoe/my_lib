@@ -11,6 +11,12 @@ MAIN	=	main.c
 
 EXEC 	=	lib.out
 
+CS 		=	./coding-style/coding-style.sh
+
+LOG		=	coding-style/report/coding-style-reports.log
+
+REPORTS =	coding-style/report/
+
 SRC	=	$(wildcard library/memlib/*.c) 		\
 		$(wildcard library/arraylib/*.c) 	\
 		$(wildcard library/strlib/*.c)		\
@@ -44,5 +50,9 @@ fclean: clean
 	rm -f $(EXEC)
 	rm -f $(LIB_PATH)
 	rm -f *.out
+
+norm: fclean
+	@$(CS) . $(REPORTS)
+	cat $(LOG)
 
 re: clean all
