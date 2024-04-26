@@ -140,4 +140,17 @@ int my_strcpytil(char *dest, char *src, char c);
 /// @return a pointer to the new string allocated
 char *my_strduptil(char *str, char c);
 
+/// @brief separate `str` into tok like `tok`
+/// @param str the string to parse
+/// @param tok the token
+/// @return returns strings without token
+/// @note if `str` == NULL it will use the last string used
+char *my_strtok(char *str, char tok);
+
+/// @brief create a word array with a string
+/// @param str the sring to parse
+/// @param delim the delim of each string
+/// @return a word array
+char **my_str_to_word_array(char *str, char delim);
+
 #endif /* !STRLIB_H_ */

@@ -21,6 +21,7 @@ SRC	=	$(wildcard library/memlib/*.c) 		\
 		$(wildcard library/arraylib/*.c) 	\
 		$(wildcard library/strlib/*.c)		\
 		$(wildcard library/mathlib/*.c)		\
+		$(wildcard library/my_printf/*.c)
 
 LIB_PATH = libmy.a
 
@@ -52,7 +53,7 @@ fclean: clean
 	rm -f *.out
 
 norm: fclean
-	@$(CS) . $(REPORTS)
+	$(CS) . $(REPORTS)
 	cat $(LOG)
 
 re: clean all

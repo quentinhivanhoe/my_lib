@@ -14,7 +14,6 @@ void *my_memdup(void *mem)
     if (!mem)
         return NULL;
     len = my_memlen(mem);
-    printf("%d\n", len);
     dup_mem = my_malloc(sizeof(char *) * len);
     my_memcpy(dup_mem, mem);
     dup_mem[len - 1] = NULL;

@@ -5,6 +5,7 @@
 ** handle_garbage
 */
 #include "memlib.h"
+#include "../../include/lib.h"
 #include <stdio.h>
 
 void print_garbage(garbage_t *grb)
@@ -14,9 +15,9 @@ void print_garbage(garbage_t *grb)
 
     while (grb != NULL) {
         len = my_memlen(grb->data);
-        printf("Block allocated at: %p\n", grb->data);
-        printf("Block lenght: %d\n", len);
-        printf("-----------------------------------\n");
+        my_printf("Block allocated at: %p\n", grb->data);
+        my_printf("Block lenght: %d\n", len);
+        my_printf("-----------------------------------\n");
         grb = grb->next;
     }
     grb = save_grb;

@@ -12,5 +12,6 @@
     #include "../library/memlib/memlib.h"
     #include "../library/strlib/strlib.h"
     #include "../library/mathlib/mathlib.h"
+    #include "../library/my_printf/my_printf.h"
 
 #endif /* !LIB_H_ */
