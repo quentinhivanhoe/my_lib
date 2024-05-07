@@ -15,7 +15,7 @@ int my_strcpytil(char *dest, char *src, char c)
     if (c == '\0')
         return my_strcpy(dest, src);
     if (my_strocc(src, c) < 1)
-        return -1;
+        c = '\0';
     while (src[i] != c) {
         dest[i] = src[i];
         i++;
