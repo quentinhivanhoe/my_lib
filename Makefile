@@ -40,7 +40,7 @@ $(LIB_PATH): $(OBJ)
 	ar rc $(LIB_PATH) $(OBJ)
 	make clean
 
-.PHONY: clean fclean
+.PHONY: clean fclean norm
 
 clean:
 	rm -f $(OBJ)

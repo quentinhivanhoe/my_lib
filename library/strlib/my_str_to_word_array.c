@@ -22,7 +22,6 @@ char **my_str_to_word_array(char *str, char delim)
         array[i] = tmp;
         array[i + 1] = NULL;
         tmp = my_strtok(NULL, delim);
-
     }
     return array;
 }
