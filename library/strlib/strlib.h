@@ -69,10 +69,11 @@ char *my_strndup(char *str, int nbyte);
 /// @brief compare two strings and chek if there are the same
 /// @param s1 the first string to compare
 /// @param s2 the second string to compare
+/// @param sensitive precise if the case is sensitive or not
 /// @return negative number if s1 < s2 and positive number in other case
 /// @note if s1 == NULL, INT_MAX is returned and if s2 == NULL, -INT_MAX
 /// is returned
-int my_strcmp(char *s1, char *s2);
+int my_strcmp(char *s1, char *s2, bool sensitive);
 
 /// @brief indicate if the str content is alpha character
 /// @param str the string to check
@@ -110,10 +111,11 @@ char *my_strappend(char *str, char c);
 /// @param s1 the first strings to compare
 /// @param s2 the second strings to compare
 /// @param nbyte the number of byte to compare
+/// @param sensitive precise if the case is sensitive or not
 /// @return 0 if the two stings is the same,
 ///         negative number if s2 > s1
 ///         positive number if s1 > s2
-int my_strncmp(char *s1, char *s2, int nbyte);
+int my_strncmp(char *s1, char *s2, int nbyte, bool sensitive);
 
 /// @brief reversed a string
 /// @param str the string to reversed
