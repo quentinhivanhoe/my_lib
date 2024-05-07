@@ -34,7 +34,7 @@ LIB_FLAGS	=	-L . -l my -I include
 CFLAGS	=	-W -Wall -Wextra -Werror
 
 all: $(LIB_PATH)
-	$(CC) -g3 $(MAIN) $(LIB_FLAGS) -o $(EXEC)
+	$(CC) -g3 $(MAIN) $(LIB_FLAGS) $(CFLAGS) -o $(EXEC)
 
 $(LIB_PATH): $(OBJ)
 	ar rc $(LIB_PATH) $(OBJ)

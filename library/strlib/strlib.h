@@ -153,4 +153,14 @@ char *my_strtok(char *str, char tok);
 /// @return a word array
 char **my_str_to_word_array(char *str, char delim);
 
+/// @brief turn an alphanumeric string into upper char
+/// @param str the string to change
+/// @return returns a new allocated string
+char *my_str_upper(char *str);
+
+/// @brief turn an alphanumeric string into lowercase
+/// @param str the string to change
+/// @return returns a new allocated string
+char *my_str_lower(char *str);
+
 #endif /* !STRLIB_H_ */
