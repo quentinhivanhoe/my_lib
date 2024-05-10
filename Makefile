@@ -23,11 +23,22 @@ SRC	=	$(wildcard library/memlib/*.c) 		\
 		$(wildcard library/mathlib/*.c)		\
 		$(wildcard library/my_printf/*.c)
 
+RM 	=	rm -f
+
 LIB_PATH = libmy.a
 
 LIB_NAME = my
 
+LIB_CR	=	-lcriterion --coverage
+
 OBJ	=	$(SRC:.c=.o)
+
+TESTS	= 	$(wildcard tests/strlib_tests/*.c) 	\
+			$(wildcard tests/mathlib_tests/*.c)	\
+
+TESTS_SRC	=	$(TESTS:.c=.o)
+
+TEST_EXEC	=	unit_test
 
 LIB_FLAGS	=	-L . -l my -I include
 
@@ -43,17 +54,31 @@ $(LIB_PATH): $(OBJ)
 .PHONY: clean fclean norm
 
 clean:
-	rm -f $(OBJ)
-	rm -f *~
-	rm -f vgcore*
+	$(RM) $(OBJ)
+	$(RM) *~
+	$(RM) vgcore*
 
 fclean: clean
-	rm -f $(EXEC)
-	rm -f $(LIB_PATH)
-	rm -f *.out
+	$(RM) $(EXEC)
+	$(RM) $(LIB_PATH)
+	$(RM) *.out
 
 norm: fclean
 	$(CS) . $(REPORTS)
 	cat $(LOG)
 
 re: clean all
+
+tests_run: $(TESTS_SRC) $(LIB_PATH)
+	$(CC) -o $(TEST_EXEC) $(TESTS_SRC) $(SRC) $(CFLAGS) $(LIB_FLAGS) $(LIB_CR)
+	./$(TEST_EXEC) && gcovr -e tests/ -b
+
+tests_clean: clean
+	$(RM)	$(TESTS_SRC)
+	$(RM) *.gcda
+	$(RM) *.gcno
+
+tests_fclean: tests_clean fclean
+	$(RM) $(TEST_EXEC)
+
+tests_re: tests_fclean tests_run
