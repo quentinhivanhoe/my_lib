@@ -34,6 +34,7 @@ LIB_CR	=	-lcriterion --coverage
 OBJ	=	$(SRC:.c=.o)
 
 TESTS	= 	$(wildcard tests/strlib_tests/*.c) 	\
+			$(wildcard tests/memlib_tests/*.c)	\
 			$(wildcard tests/mathlib_tests/*.c)	\
 
 TESTS_SRC	=	$(TESTS:.c=.o)

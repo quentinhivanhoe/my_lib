@@ -13,8 +13,6 @@ void *my_realloc(void *ptr, size_t size)
 
     if (!ptr)
         return my_malloc(size);
-    if (size <= sizeof(*ptr))
-        return ptr;
     new_ptr = my_malloc(size);
     my_memcpy(new_ptr, ptr);
     return new_ptr;
