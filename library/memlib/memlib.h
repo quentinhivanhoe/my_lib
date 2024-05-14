@@ -95,4 +95,10 @@ void free_garbage(garbage_t *grb);
 /// @param data the data to delete
 void del_in_garbage(garbage_t **grb, void *data);
 
+/// @brief copy `nbyte of `src` into `dest`
+/// @param dest the place where the memory is copied
+/// @param src the memory to copy
+/// @param nbyte the number of byte to copy
+void my_memncpy(void *dest, void *src, unsigned int nbyte);
+
 #endif /* !GARBAGE_H_ */
