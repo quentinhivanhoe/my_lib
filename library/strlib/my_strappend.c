@@ -13,8 +13,6 @@ char *my_strappend(char *str, char c)
     char *new_str = NULL;
     int len = 0;
 
-    if (!str)
-        return NULL;
     len = my_strlen(str);
     new_str = my_malloc(sizeof(char *) * (len + 2));
     my_strcpy(new_str, str);

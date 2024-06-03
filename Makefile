@@ -21,7 +21,8 @@ SRC	=	$(wildcard library/memlib/*.c) 		\
 		$(wildcard library/arraylib/*.c) 	\
 		$(wildcard library/strlib/*.c)		\
 		$(wildcard library/mathlib/*.c)		\
-		$(wildcard library/my_printf/*.c)
+		$(wildcard library/my_printf/*.c)	\
+		$(wildcard library/iolib/*.c)
 
 RM 	=	rm -f
 

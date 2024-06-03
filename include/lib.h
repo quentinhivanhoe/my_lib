@@ -13,5 +13,6 @@
     #include "../library/strlib/strlib.h"
     #include "../library/mathlib/mathlib.h"
     #include "../library/my_printf/my_printf.h"
+    #include "../library/iolib/iolib.h"
 
 #endif /* !LIB_H_ */
