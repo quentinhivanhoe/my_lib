@@ -33,19 +33,32 @@ void store_in_grabage(garbage_t **grb, void *data)
     (*grb) = new_grb;
 }
 
+garbage_t *tmp_func(garbage_t **grb, void *data)
+{
+    garbage_t *del_grb = NULL;
+
+    if (!(*grb)->next) {
+        free((*grb)->data);
+        free((*grb));
+        return NULL;
+    } else if ((*grb)->next->data == data) {
+        del_grb = (*grb)->next;
+        (*grb)->next = (*grb)->next->next;
+        free(del_grb->data);
+        free(del_grb);
+        return (*grb);
+    }
+    return (*grb);
+}
+
 void del_in_garbage(garbage_t **grb, void *data)
 {
     garbage_t *start = (*grb);
-    garbage_t *del_grb = NULL;
 
     while ((*grb) != NULL) {
-        if ((*grb)->next->data == data) {
-            del_grb = (*grb)->next;
-            (*grb)->next = (*grb)->next->next;
-            free(del_grb->data);
-            free(del_grb);
+        (*grb) = tmp_func(grb, data);
+        if (!(*grb))
             break;
-        }
         (*grb) = (*grb)->next;
     }
     (*grb) = start;
