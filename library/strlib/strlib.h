@@ -165,4 +165,11 @@ char *my_str_upper(char *str);
 /// @return returns a new allocated string
 char *my_str_lower(char *str);
 
+/// @brief find a token in a string
+/// @param str the string to parse
+/// @param tok the token to found
+/// @param sensitive sensitive
+/// @return true if tok is in, else false
+int my_strstr(char *str, char *tok, bool sensitive);
+
 #endif /* !STRLIB_H_ */
